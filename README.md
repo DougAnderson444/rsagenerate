@@ -9,7 +9,5 @@ Uses a Hash-Based Message Authentication Code (HMAC) Deterministic Random Bit Ge
 To run test, run:
 
 ```cli
-
 cargo test -- --nocapture
-
 ```
