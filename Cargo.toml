@@ -15,3 +15,5 @@ serde_json = "1"
 rsa = "0.6.1"
 getrandom = {version = "0.2", features = ["js"] } # // works in wasm/js/browser
 rand = "0.8.5"
+der = "0.5.1"
+base64 = "0.13.0"
