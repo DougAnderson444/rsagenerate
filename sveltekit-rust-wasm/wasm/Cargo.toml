@@ -1,8 +1,8 @@
 [package]
-name = "rsawasm"
+name = "wasm"
 version = "0.1.0"
-authors = ["Doug A <douganderson444@gmail.com>"]
-edition = "2018"
+authors = ["Nuno Góis <github@nunogois.com>"]
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -11,7 +11,10 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-wasm-bindgen = "0.2.63"
+serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen = "0.2.80"
+serde-wasm-bindgen = "0.3.1"
+web-sys = { version = "0.3.57", features = ['console'] }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -36,3 +39,7 @@ wasm-bindgen-test = "0.3.13"
 [profile.release]
 # Tell `rustc` to optimize for small code size.
 opt-level = "s"
+
+# Because returns String https://stackoverflow.com/questions/64507718/why-does-wasm-opt-fail-in-wasm-pack-builds-when-generating-a-function-returning
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["-Oz", "--enable-mutable-globals"]
