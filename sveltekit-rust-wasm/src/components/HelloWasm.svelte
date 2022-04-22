@@ -21,6 +21,11 @@
 	🦀 + 🕸 Hello WebAssembly!
 </button>
 
+<div>
+	Warning: Unfortunately, even with webassembly this still takes like 2 minutes, and it blocks the
+	main javacript thread (TODO: need to introduce a worker)
+</div>
+
 <div class="">
 	Address: {address}
 </div>
