@@ -41,7 +41,7 @@ pub fn determine_bytes(seed: String) -> [u8; 32] {
 
 pub fn do_rsa(seed: String) -> Keypair {
     let mut rng = StdRng::from_seed(determine_bytes(seed));
-    let bits = 2048;
+    let bits = 4096;
     let priv_key = RsaPrivateKey::new(&mut rng, bits).expect("failed to generate a key");
     let pub_key = RsaPublicKey::from(&priv_key);
 
