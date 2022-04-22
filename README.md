@@ -2,6 +2,8 @@
 
 Generate RSA keys from a seed. 100% pure Rust.
 
+⚠️ This completely works, unfortunately, it still takes way too long (122 seconds for a 4096 bit RSA key) ⚠️
+
 -   [x] Pass in a seed (a-la [BIP39 seed phrase](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki))
 -   [x] Get a Deterministic RSA Key in return
 -   [x] Hash it using Sha2-256
@@ -10,8 +12,6 @@ Generate RSA keys from a seed. 100% pure Rust.
 -   [ ] Verify Using the key
 
 Uses a Hash-Based Message Authentication Code (HMAC) Deterministic Random Bit Generator (DRBG) with SHA2-256 (HmacDRBG-SHA2-256) to generate deterministic bytes from a seed, then use that seed to generate an RSA keypair.
-
-Unfortunately, it still takes too long (122 seconds for a 4096 bit RSA key)
 
 ## WHY?!
 
