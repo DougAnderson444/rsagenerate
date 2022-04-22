@@ -39,7 +39,7 @@ pub fn greet() {
 }
 
 #[wasm_bindgen]
-pub fn generate_address() -> String {
-    let address: String = rsagenerate::get_address("the seed value".to_string());
+pub fn generate_address(seed: &str) -> String {
+    let address: String = rsagenerate::get_address(seed.to_string());
     address
 }
